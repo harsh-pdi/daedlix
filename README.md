@@ -1,6 +1,5 @@
 # Daedlix
 
-## Description
 Contact Matching POC
 
 - Framework: Nest.js
