@@ -10,7 +10,20 @@ Contact Matching POC
 ## Project setup
 
 ```bash
+# install dependencies
 $ pnpm install
+
+# setup env file
+$ cp .env.example .env
+
+# create postgres database
+$ CREATE DATABASE daedlix;
+
+# run migrations
+$ pnpm run mikro-orm:up
+
+# run project
+$ pnpm run start:dev
 ```
 
 ## Compile and run the project
