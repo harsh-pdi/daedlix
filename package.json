@@ -26,6 +26,7 @@
     "mikro-orm:list": "mikro-orm migration:list --config libs/database/src/datastore/mikro-orm.config.ts"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.850.0",
     "@mikro-orm/cli": "^6.4.16",
     "@mikro-orm/core": "^6.4.16",
     "@mikro-orm/migrations": "^6.4.16",
@@ -35,10 +36,13 @@
     "@nestjs/config": "^4.0.2",
     "@nestjs/core": "^11.0.1",
     "@nestjs/platform-express": "^11.0.1",
+    "csv-parser": "^3.2.0",
     "dotenv": "^17.2.0",
     "dotenv-cli": "^8.0.0",
+    "fix-esm": "^1.0.1",
     "reflect-metadata": "^0.2.2",
     "rxjs": "^7.8.1",
+    "strip-bom-stream": "^5.0.0",
     "uuid": "^11.1.0"
   },
   "devDependencies": {

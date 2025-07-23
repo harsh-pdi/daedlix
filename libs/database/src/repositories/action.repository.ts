@@ -1,5 +1,5 @@
 import { InjectRepository } from "@mikro-orm/nestjs";
-import { Action } from "../entities/action.entity";
+import { Action } from "../entities";
 import { BaseEntityRepository } from "./base.repository";
 
 export class ActionRepository extends BaseEntityRepository<Action> {

@@ -6,7 +6,6 @@ import { AppModule } from './app.module';
 const appVersion = '1';
 
 async function bootstrap() {
-    // await MikroORM.init(dbConfig);
     const app = await NestFactory.create(AppModule);
 
     const configService = app.get(ConfigService);

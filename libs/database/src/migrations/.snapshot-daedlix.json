@@ -99,6 +99,91 @@
           "default": "now()",
           "mappedType": "datetime"
         },
+        "organization_id": {
+          "name": "organization_id",
+          "type": "bigint",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "bigint"
+        },
+        "url": {
+          "name": "url",
+          "type": "varchar(255)",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 255,
+          "mappedType": "string"
+        }
+      },
+      "name": "audience",
+      "schema": "pdi",
+      "indexes": [
+        {
+          "keyName": "audience_pkey",
+          "columnNames": [
+            "id"
+          ],
+          "composite": false,
+          "constraint": true,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {
+        "audience_organization_id_foreign": {
+          "constraintName": "audience_organization_id_foreign",
+          "columnNames": [
+            "organization_id"
+          ],
+          "localTableName": "pdi.audience",
+          "referencedColumnNames": [
+            "id"
+          ],
+          "referencedTableName": "pdi.organization",
+          "deleteRule": "cascade",
+          "updateRule": "cascade"
+        }
+      },
+      "nativeEnums": {}
+    },
+    {
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "unsigned": false,
+          "autoincrement": true,
+          "primary": true,
+          "nullable": false,
+          "mappedType": "bigint"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamptz",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 6,
+          "default": "now()",
+          "mappedType": "datetime"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamptz",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 6,
+          "default": "now()",
+          "mappedType": "datetime"
+        },
         "name": {
           "name": "name",
           "type": "text",
@@ -228,6 +313,103 @@
             "id"
           ],
           "referencedTableName": "pdi.action",
+          "updateRule": "cascade"
+        }
+      },
+      "nativeEnums": {}
+    },
+    {
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "bigserial",
+          "unsigned": false,
+          "autoincrement": true,
+          "primary": true,
+          "nullable": false,
+          "mappedType": "bigint"
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamptz",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 6,
+          "default": "now()",
+          "mappedType": "datetime"
+        },
+        "updated_at": {
+          "name": "updated_at",
+          "type": "timestamptz",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "length": 6,
+          "default": "now()",
+          "mappedType": "datetime"
+        },
+        "action_id": {
+          "name": "action_id",
+          "type": "bigint",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "bigint"
+        },
+        "audience_id": {
+          "name": "audience_id",
+          "type": "bigint",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": false,
+          "mappedType": "bigint"
+        }
+      },
+      "name": "action_audience",
+      "schema": "pdi",
+      "indexes": [
+        {
+          "keyName": "action_audience_pkey",
+          "columnNames": [
+            "id"
+          ],
+          "composite": false,
+          "constraint": true,
+          "primary": true,
+          "unique": true
+        }
+      ],
+      "checks": [],
+      "foreignKeys": {
+        "action_audience_action_id_foreign": {
+          "constraintName": "action_audience_action_id_foreign",
+          "columnNames": [
+            "action_id"
+          ],
+          "localTableName": "pdi.action_audience",
+          "referencedColumnNames": [
+            "id"
+          ],
+          "referencedTableName": "pdi.action",
+          "deleteRule": "cascade",
+          "updateRule": "cascade"
+        },
+        "action_audience_audience_id_foreign": {
+          "constraintName": "action_audience_audience_id_foreign",
+          "columnNames": [
+            "audience_id"
+          ],
+          "localTableName": "pdi.action_audience",
+          "referencedColumnNames": [
+            "id"
+          ],
+          "referencedTableName": "pdi.audience",
+          "deleteRule": "cascade",
           "updateRule": "cascade"
         }
       },

@@ -6,7 +6,7 @@ export class ActionController {
     constructor(private readonly actionService: ActionService) {}
 
     @Post()
-    async createAction(@Body() input: { name: string }) {
+    async createAction(@Body() input: { name: string, audienceUrls: Array<string> }) {
         return await this.actionService.createAction(input);
     }
 

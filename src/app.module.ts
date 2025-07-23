@@ -8,10 +8,6 @@ import { services } from './services';
 
 @Module({
     imports: [
-        // MikroOrmModule.forRoot({
-        //     ...dbConfig,
-        //     autoLoadEntities: true,
-        // }),
         ConfigModule.forRoot({ isGlobal: true }),
         DatabaseModule,
     ],
